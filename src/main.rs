@@ -1,36 +1,59 @@
-//! # Nentrokey Encryption Library
+
+//!
+//!       ____   _____   _____  ____   __
+//!/ __ \ |  __ \ |_   _|/ __ \ | \ | |
+//!| |  | || |__) |  | | | |  | ||  \| |
+//!| |  | ||  _  /   | | | |  | || . ` |
+//!| |__| || | \ \  _| |_| |__| || |\  |
+//!\____/ |_|  \_\|_____|\____/ |_| \_|
+//!_____  _       _____
+//! / ____|| |     |_   _|
+//!| |     | |       | |
+//!| |     | |       | |
+//!| |____ | |____  _| |_
+//! \_____||______||_____|
 //! 
-//! ```sh
-//! cargo run
-//! ```
+
+//! # Nentropy Security Project - Encryption, Decryption and Bitwise Comparison
+//! **Custom experimental security operations library and binary
 //! 
-//! ## Features
+//! //! ## Features
+//! ```bash
 //! - Use flag -e or --encryption to specify encryption type
 //! - Use flag -f or --file to specify file path
 //! - Use flag -t or --text to specify text
 //! - Use flag -v or --verbose to enable verbose output
 //! - Use flag -q or --quiet to enable quiet output
+//! ```
+
 //! 
+//! ## Features:
+//! - Import into any library or project
+//! - Run the src/main.rs binary to execute using flags
+//! - Use the src/utils.rs file to customize the output or types.
+//! 
+//! Binary:
 //! - Run your main function from the CLI
 //! - More to come this is mostly an experimental project
 //! 
-//! Example running as a standalone with flags: 
-//! ```bash
-//! cargo run nentrokey -t -e symmetric --verbose --quiet
-//! ```
-//! Altering the library to suit your security needs:
-//! ```cargo
+//! Example: 
+//! ```rust
+//! // Your main file
 //! use nentrokey::main;
 //! 
 //! fn run_nentrokey() {
-//!     main();
+//!     nentrokey::main();
 //! }
-//! 
 //! ```
 //! 
+//! ```bash
+//! cargo run nentrokey -t -e symmetric --verbose --quiet
+//! ```
 
 use crate::lib::{ main, ArgMatches, matches };
+use derive::{Deserialize, Serialize, Clone, Debug};
 
+![derive(Clone, Debug, Serialize, Deserialize)]
 pub fn main(input: Option<ArgMatches::matches>) -> Result<(), Box<dyn std::error::Error>> {
     crate::lib::main(input)
     Ok(("Encrytption of {:?} completed", input))

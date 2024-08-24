@@ -64,10 +64,11 @@ use syn_crabs::setup_logging;
 use colored::{ Colorize, ColoredString };
 use encryption_types::{ EncryptionType, Default };
 
-
-
+//Implements the command line using clap and calls the security operations identified
+// in encryption types and encryptions ops modules
+![derive(Clone, Debug, Serialize, Deserialize)]
 fn main() {
-    syn_crabs::setup_logging(verbose: false, quiet: false).expect("failed to init logging");
+    syn_crabs::setup_logging(verbose=false, quiet=false).expect("failed to init logging");
     diplay_welcome().colorize_output().bold_heading().unwrap()("failed to display intro");
     let matches: ArgMatches = Command::new("RustCrypt CLI")
         .version("1.0")
