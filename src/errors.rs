@@ -24,6 +24,7 @@ impl fmt::Display for CustomError {
             CustomError::SigningError(msg) => write!(f, "Signing Error: {}", msg),
             CustomError::HashingError(msg) => write!(f, "Hashing Error: {}", msg),
             CustomError::VerificationError(msg) => write!(f, "Verification Error: {}", msg),
+            CustomError::ReportError(msg) => write!(f, "Report Error: {}", msg),
             CustomError::UnknownError(msg) => write!(f, "Unknown Error: {}", msg),
         }
     }
