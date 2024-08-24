@@ -19,9 +19,10 @@
 
 ### Features
 
-- Symmetrical Encryption with RSA Support and in depth documentation based on reading
-- Assymetrical Public/Private Key implementation of AES-X Bit
-- Hashing Algorithm
+- Symmetrical Encryption with AES Support and in depth documentation based on reading
+- Assymetrical Public/Private Key implementation of RSA (and maybe PGP) implemented with ```library```
+- Hashing Program with a variety of Algorithms implemented with ```library```
+- Digital Sigs eg. Ed25519
 - Bitwise binary file pairing for expansion of low level comprehension
   - Validation with MD5
 - Decryption suite for all the functionality
@@ -30,9 +31,9 @@
 ### Roadmap
 - Explorations of ```Ockam``` [Ockam Github]("https://github.com/build-trust/ockam") for multi-node secure data in transit.
 - Audacious Attempt to implement an ```Elliptical Curve Algorithm``` (Much bigger mathematical, and development challenge without a library)
-  
-
-
+- Try and implement my own local ```data-in-transit``` real-time encryption for commands associated with pcaps etc.
+  - Nentropy note: this might be tough because of a lack of client to decrypt instructions to plain text. 
+  - Could be addressed by using it only for C2C commands.
 
 ### Usage 
 - import ```use::nentrokey::lib::main;``` into your own library after installing with ```cargo add nentrokey```

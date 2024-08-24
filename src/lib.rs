@@ -49,8 +49,6 @@
 //! ```bash
 //! cargo run nentrokey -t -e symmetric --verbose --quiet
 //! ```
-
-
 #![allow(clippy::cognitive_complexity)]
 mod encryption_types;
 mod encryption_ops;
@@ -128,7 +126,8 @@ fn main() {
         syn_crabs::init(LevelFilter::Info, Config::default()).unwrap();
     }
 
-    // Operate on command-line arguments
+    /// ### Operate on command-line arguments
+    /// Retrieve file path or text, and the encryption type from the command line
     let file_path: String = matches.get_one("file").unwrap_or_else(|| "no file included").to_string();
     let text: String = matches.get_one("text").unwrap_or_else(|| "no text included").to_string();
     let encryption_type: Vec<EncryptionType> = matches.get_many("encryption")
@@ -138,11 +137,8 @@ fn main() {
         "hash" => EncryptionType::Hash,
         "verify" => EncryptionType::Verify,
         _ => EncryptionType::Unknown], // or some other default value
-    , Err((e)))
-    .panic("Failed to set encryption type");
-
-
-   
+    , Err((e)));
+    
 
 // Example handling based on the encryption type
     match encryption_type {
@@ -156,7 +152,7 @@ fn main() {
         }
         Some(EncryptionType::Hash) => {
             log::info!("Performing hashing");
-            // Add your hashing logic here
+            hash_data(&payload: Payload).expect("Hashing Failed")
         }
         Some(EncryptionType::Verify) => {
             log::info!("Verifying encryption");
