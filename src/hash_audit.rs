@@ -7,4 +7,9 @@
 /// 2. Specific immplementation
 /// 
 use encryption_types::HashingAlgs;
-use encryption_ops::{ hash_data, Payload }
+use encryption_ops::{hash_data, Payload, CipherPayload};
+use bitvec::prelude::*;
+use sha2::{Sha256, Sha512, Digest};
+use std::convert::TryInto; // For converting slices to arrays
+
+
