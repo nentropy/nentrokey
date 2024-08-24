@@ -1,0 +1,21 @@
+[package]
+name = "nentrokey"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = "4.5.16"
+colored = "2.1.0"
+env_logger = "0.11.5"
+fs = "0.0.5"
+log = "0.4.22"
+simplelog = "0.12.2"
+syn_crabs = "0.2.0"
+
+[lib]
+name="nentrokey_rs"
+path = "src/lib.rs"
+
+[[bin]]
+name = "nentrokey"
+path = "src/main.rs"
