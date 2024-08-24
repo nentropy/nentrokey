@@ -51,6 +51,7 @@
 //! ```
 #![allow(clippy::cognitive_complexity)]
 mod errors;
+mod metrics;
 mod encryption_types;
 mod encryption_ops;
 use clap::{ ArgMatches, Arg, Command };
@@ -65,7 +66,7 @@ use encryption_types::{ EncryptionType, Default };
 
 use encryption_ops::{ hash_data, symmetrical_encryption }
 
-use errors::CustomError;
+
 
 //Implements the command line using clap and calls the security operations identified
 // in encryption types and encryptions ops modules
