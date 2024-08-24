@@ -1,6 +1,6 @@
 # Nentrokey
 
-
+```markdown
          ____   _____   _____  ____   _   _
     / __ \ |  __ \ |_   _|/ __ \ | \ | |
    | |  | || |__) |  | | | |  | ||  \| |
@@ -14,6 +14,7 @@
    | |____ | |____  _| |_
     \_____||______||_____| "
 
+```
 # :: Nentrokey Security ::
 ***A Lightweight concurrent toy encryption implementation of encryption and binary pair auditing for deepending knowledge***
 
