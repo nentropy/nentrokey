@@ -50,6 +50,7 @@
 //! cargo run nentrokey -t -e symmetric --verbose --quiet
 //! ```
 #![allow(clippy::cognitive_complexity)]
+mod errors;
 mod encryption_types;
 mod encryption_ops;
 use clap::{ ArgMatches, Arg, Command };
@@ -61,6 +62,10 @@ use simplelog::Config;
 use syn_crabs::setup_logging;
 use colored::{ Colorize, ColoredString };
 use encryption_types::{ EncryptionType, Default };
+
+use encryption_ops::{ hash_data, symmetrical_encryption }
+
+use errors::CustomError;
 
 //Implements the command line using clap and calls the security operations identified
 // in encryption types and encryptions ops modules
