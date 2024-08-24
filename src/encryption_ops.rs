@@ -49,41 +49,28 @@ trait Encrypt {
     }
 
 }
-pub fn hash_data(input_data: Payload, algorithm: HashingAlgs, key_size: KeySize) -> Result<(), HashingError>> {
+    fn hash_data(input_data: Payload, algorithm: HashingAlgs, key_size: KeySize) -> Result<(), HashingError>> {
+
+    }
     
-}
-
-pub fn encrypt_with_aes(input_data: Payload) -> Result<Vec<u8>, EncryptionError>> {
-
-}
-
-pub fn encrypt_with_rsa(input_data: Payload) -> Result<Vec<u8>, EncryptionError>> {
-
-}
 
 
-// Implement RSA for symmetric encryption
-pub async fn symmetric_enc(input: Option<&str, fs::File::file_path) -> Result<(), Box<dyn std::error::Error>> {
-    println!("To be implemented")
-}
+    fn sign_message(input_data: Payload) -> Result<Vec<u8>, SigningError>> {
 
-pub async fn assymetric_enc(input: Option<&str, fs::File::file_path) -> Result<(), Box<dyn std::error::Error>> {
-    println!("To be implemented")
-}}
+    }
 
-pub async fn hash_data(payload: Payload, fs::File::file_path, alg: &str) -> Result<(), Box<dyn std::error::Error>> {
-    
-}
+    fn encrypt_with_rsa(input_data: Payload) -> Result<Vec<u8>, EncryptionError>> {
 
-pub async fn encrypt_with_aes(payload: Payload, File::read)
-
-pub async fn sign_data(payload: Payload, alg: &str, key_size: &vec<u8>) -> Result<(), Box<dyn std::error::Error>> {
-    
-}
-
+    }
 
 /// Universal Decryption @TODO Universal Encryption
+trait Decrypt {
+    fn decrypt_cipher_code(input_data: CipherPayload) -> Result<Vec<u8>, DecryptionError>> {
 
-pub fn decrypt_cipher_code(input_data: CipherPayload) -> Result<Vec<u8>, DecryptionError>> {
+    }
 
+    fn decrypt_report(output_data: Metrics)
+
+
+}
 }

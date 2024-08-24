@@ -3,6 +3,7 @@
 /// 
 
 use std::fmt;
+use colorize::ColoredString::;
 
 #[derive(Debug)]
 pub enum CustomError {
@@ -11,13 +12,14 @@ pub enum CustomError {
     SigningError(String),
     HashingError(String),
     VerificationError(String),
+    ReportError(String),
     UnknownError(String),
 }
 
 impl fmt::Display for CustomError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            CustomError::EncryptionError(msg) => write!(f, "Encryption Error: {}", msg),
+            CustomError::EncryptionError(msg) => write!(f, "Encryption Error: {}", msg).ColoredString(),
             CustomError::DecryptionError(msg) => write!(f, "Decryption Error: {}", msg),
             CustomError::SigningError(msg) => write!(f, "Signing Error: {}", msg),
             CustomError::HashingError(msg) => write!(f, "Hashing Error: {}", msg),
